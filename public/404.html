@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Lost in the Stack | Adithya Jisha Biju</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300f0ff%22 font-family=%22monospace%22 font-weight=%22bold%22>A</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #050505;
+      color: #ffffff;
+      font-family: 'Manrope', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Background dust */
+    .bg-dust {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    
+    .glow-radial {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.03) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    
+    .container {
+      text-align: center;
+      z-index: 10;
+      max-width: 500px;
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 120px;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1;
+      background: linear-gradient(135deg, #00f0ff 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+    }
+    
+    h2 {
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    
+    p {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-bottom: 35px;
+      line-height: 1.6;
+    }
+    
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #111111;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #00f0ff;
+    }
+    
+    a.btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #000000;
+      background: linear-gradient(135deg, #00f0ff 0%, #00d8ff 50%, #8b5cf6 100%);
+      padding: 12px 30px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+    
+    a.btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-dust"></div>
+  <div class="glow-radial"></div>
+
+  <div class="container">
+    <h1>404</h1>
+    <h2>Looks like this page got lost in the stack.</h2>
+    <p>
+      The resource you tried to load could not be resolved. Verification status: <code>RESOLVE_ERR_NOT_FOUND</code>.
+    </p>
+    <a href="/my-website/" class="btn">Back Home</a>
+  </div>
+</body>
+</html>
