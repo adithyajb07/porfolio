@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, ShieldCheck, Database, Award } from 'lucide-react';
+import { X, ExternalLink, ShieldCheck, Database, Award, GitBranch } from 'lucide-react';
 import type { Project } from '../data/projectsData';
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -21,6 +21,198 @@ interface ProjectModalProps {
   project: Project;
   onClose: () => void;
 }
+
+// System Pipeline Diagram Component representing data flow pipelines
+const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
+  const nodeClass = "flex-grow flex-shrink-0 p-3 rounded-xl bg-black border border-white/5 text-center flex flex-col justify-center items-center min-w-[120px] max-w-[150px] min-h-[60px] transition-colors hover:border-accent-cyan/20";
+  const stepLabelClass = "text-text-secondary text-[8px] font-mono uppercase tracking-wider mb-1 font-bold";
+  const nodeTextClass = "text-xs font-semibold text-white leading-tight font-sans";
+  const arrowClass = "text-accent-cyan/40 font-bold text-sm hidden sm:inline-block select-none";
+
+  const renderSteps = () => {
+    switch (projectId) {
+      case 'image-authenticity':
+        return (
+          <>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 1</span>
+              <span className={nodeTextClass}>Image Input</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 2</span>
+              <span className={nodeTextClass}>Error Level (ELA)</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 3</span>
+              <span className={nodeTextClass}>LBP & FFT Extraction</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 4</span>
+              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">Random Forest</span>
+            </div>
+          </>
+        );
+      case 'adversarial-prompt':
+        return (
+          <>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 1</span>
+              <span className={nodeTextClass}>Input Prompt</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 2</span>
+              <span className={nodeTextClass}>Obfuscation Decode</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 3</span>
+              <span className={nodeTextClass}>BERT Tokenizer</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 4</span>
+              <span className="text-xs font-bold text-accent-violet leading-tight font-sans">Guard Shield</span>
+            </div>
+          </>
+        );
+      case 'smart-bottle':
+        return (
+          <>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 1</span>
+              <span className={nodeTextClass}>Camera Frame</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 2</span>
+              <span className={nodeTextClass}>YOLO Box Locate</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 3</span>
+              <span className={nodeTextClass}>OpenCV Contours</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 4</span>
+              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">Volume Metrics</span>
+            </div>
+          </>
+        );
+      case 'gen-erp':
+        return (
+          <>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 1</span>
+              <span className={nodeTextClass}>Purchase Req</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 2</span>
+              <span className={nodeTextClass}>Bid Comparison</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 3</span>
+              <span className={nodeTextClass}>Approval Rules</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 4</span>
+              <span className="text-xs font-bold text-emerald-500 leading-tight font-sans">Installments</span>
+            </div>
+          </>
+        );
+      case 'cleanfreshly':
+        return (
+          <>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 1</span>
+              <span className={nodeTextClass}>Client View</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 2</span>
+              <span className={nodeTextClass}>Django Backend</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 3</span>
+              <span className={nodeTextClass}>Razorpay API</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 4</span>
+              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">MySQL DB</span>
+            </div>
+          </>
+        );
+      case 'sentiment-analysis':
+        return (
+          <>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 1</span>
+              <span className={nodeTextClass}>User Reviews</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 2</span>
+              <span className={nodeTextClass}>Text Normalization</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 3</span>
+              <span className={nodeTextClass}>TF-IDF Vectors</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 4</span>
+              <span className="text-xs font-bold text-accent-violet leading-tight font-sans">Classifier</span>
+            </div>
+          </>
+        );
+      default: // book-cinema
+        return (
+          <>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 1</span>
+              <span className={nodeTextClass}>Swing UI</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 2</span>
+              <span className={nodeTextClass}>Seat Locking</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 3</span>
+              <span className={nodeTextClass}>NoSQL Client</span>
+            </div>
+            <span className={arrowClass}>→</span>
+            <div className={nodeClass}>
+              <span className={stepLabelClass}>Stage 4</span>
+              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">MongoDB Atlas</span>
+            </div>
+          </>
+        );
+    }
+  };
+
+  return (
+    <div className="p-5 rounded-2xl border border-border-subtle bg-bg-card/30 backdrop-blur-sm space-y-4">
+      <h4 className="text-xs font-mono text-accent-cyan tracking-widest uppercase flex items-center gap-1.5">
+        <GitBranch className="w-4 h-4 text-accent-cyan" /> Pipeline Workflow Diagram
+      </h4>
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-1 overflow-x-auto">
+        {renderSteps()}
+      </div>
+    </div>
+  );
+};
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   // ESC key listener
@@ -120,6 +312,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.solution}
               </p>
             </div>
+
+            {/* Workflow Diagram */}
+            <PipelineDiagram projectId={project.id} />
 
             <div>
               <h4 className="text-sm font-mono text-accent-cyan tracking-wider uppercase mb-2">

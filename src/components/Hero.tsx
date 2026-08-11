@@ -41,16 +41,26 @@ export const Hero: React.FC = () => {
             </span>
           </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05] font-sans">
-            Building <span className="text-gradient">intelligent</span> <br />
-            software that solves <br />
+          {/* Heading - Name noticed first */}
+          <div className="space-y-2">
+            <span className="text-sm md:text-base font-mono tracking-widest text-text-secondary uppercase">
+              Hi, I am
+            </span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-[1.05] font-sans">
+              <span className="text-gradient">Adithya</span> <br />
+              Jisha Biju
+            </h1>
+          </div>
+
+          {/* Tagline / Subheading */}
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-text-secondary leading-snug">
+            Building <span className="text-white">intelligent software</span> that solves <br className="hidden md:inline" />
             real-world problems.
-          </h1>
+          </h2>
 
           {/* Supporting Paragraph */}
           <p className="text-base md:text-lg text-text-secondary max-w-xl leading-relaxed">
-            I'm <strong className="text-white font-medium">Adithya Jisha Biju</strong>, a Computer Science Engineering student specializing in AI/ML. I build practical software solutions across machine learning, computer vision, NLP, backend systems, and modern web technologies.
+            I'm a Computer Science Engineering student specializing in AI/ML. I build practical software solutions across machine learning, computer vision, NLP, backend systems, and modern web technologies.
           </p>
 
           {/* Buttons Row */}
@@ -70,13 +80,6 @@ export const Hero: React.FC = () => {
               Download Resume
               <Download className="w-4 h-4 text-text-secondary group-hover:text-accent-cyan transition-colors" />
             </a>
-            <button
-              onClick={() => handleScrollTo('contact')}
-              className="text-text-secondary hover:text-white font-medium text-sm flex items-center gap-1 transition-all pl-2 cursor-pointer group"
-            >
-              Let's Connect 
-              <span className="text-accent-cyan group-hover:translate-x-1 transition-transform">→</span>
-            </button>
           </div>
         </div>
 
