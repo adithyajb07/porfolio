@@ -93,25 +93,6 @@ export const Hero: React.FC = () => {
           <div className="absolute w-48 h-48 rounded-full bg-accent-cyan/5 filter blur-3xl pointer-events-none" />
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 cursor-pointer opacity-70 hover:opacity-100 transition-opacity" onClick={() => handleScrollTo('about')}>
-        <span className="text-[10px] font-mono tracking-widest text-text-secondary uppercase">
-          Scroll to explore
-        </span>
-        <div className="w-[1.5px] h-10 bg-border-subtle relative rounded-full overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-accent-cyan rounded-full animate-[scroll-down_1.5s_infinite_ease-in-out]" />
-        </div>
-      </div>
-
-      {/* Tailwind scroll-down animation injection */}
-      <style>{`
-        @keyframes scroll-down {
-          0% { transform: translateY(-100%); }
-          50% { transform: translateY(100%); }
-          100% { transform: translateY(-100%); }
-        }
-      `}</style>
     </section>
   );
 };
