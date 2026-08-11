@@ -58,7 +58,7 @@ export const projectsData: Project[] = [
       'Interactive Streamlit UI for threat modeling'
     ],
     technologies: ['Python', 'NLP', 'TF-IDF', 'DistilBERT', 'Transformers', 'PyTorch', 'Scikit-learn'],
-    github: 'https://github.com/adithyajb07',
+    github: 'https://github.com/adithyajb07/LLM-Jailbreak-Prompt-Injection-Detection',
     image: 'pic2.jpg',
     results: [
       { label: 'Jailbreak Recall', value: '96.2%' },
