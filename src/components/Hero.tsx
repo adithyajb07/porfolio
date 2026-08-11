@@ -1,25 +1,9 @@
 import React from 'react';
-import { ArrowRight, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { HeroVisual } from './HeroVisual';
-import resumePdf from '../assets/resume/resume.pdf';
+import resumePdf from '../assets/resume/2362010_AdithyaJishaBiju.pdf';
 
 export const Hero: React.FC = () => {
-  const handleScrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
     <section
       id="home"
@@ -65,20 +49,13 @@ export const Hero: React.FC = () => {
 
           {/* Buttons Row */}
           <div className="flex flex-wrap gap-4 items-center pt-2">
-            <button
-              onClick={() => handleScrollTo('projects')}
-              className="px-6 py-3.5 bg-gradient-to-r from-accent-cyan via-blue-600 to-accent-violet text-black font-bold text-sm tracking-wide rounded-lg flex items-center gap-2 hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] cursor-pointer group"
-            >
-              View Projects 
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
             <a
               href={resumePdf}
               download="Adithya_Resume.pdf"
-              className="px-6 py-3.5 bg-bg-card hover:bg-bg-card-hover text-white border border-border-subtle hover:border-accent-cyan/40 font-semibold text-sm tracking-wide rounded-lg flex items-center gap-2 transition-all cursor-pointer group"
+              className="px-6 py-3.5 bg-gradient-to-r from-accent-cyan via-blue-600 to-accent-violet text-black font-bold text-sm tracking-wide rounded-lg flex items-center gap-2 hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] cursor-pointer group"
             >
               Download Resume
-              <Download className="w-4 h-4 text-text-secondary group-hover:text-accent-cyan transition-colors" />
+              <Download className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
         </div>
