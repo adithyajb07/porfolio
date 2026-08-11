@@ -91,10 +91,6 @@ export const Skills: React.FC = () => {
                 </div>
               )}
 
-              {/* Console Prompt footer */}
-              <div className="text-[10px] font-mono text-text-secondary/30 mt-6 pt-4 border-t border-border-subtle/50 flex items-center gap-1 select-none">
-                <span>$</span> whoami --skills --detailed
-              </div>
             </div>
           </div>
         </div>
