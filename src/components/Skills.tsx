@@ -101,7 +101,7 @@ export const Skills: React.FC = () => {
 
         {/* View Mode 1: ALL STACK (Full-Width Responsive 2x2 Bento Matrix) */}
         {selectedCategory === 'all' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-on-scroll">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
             {skillsData.map(cat => (
               <div 
                 key={cat.id} 

@@ -77,12 +77,22 @@ export const App: React.FC = () => {
       });
     }, revealObserverOptions);
 
-    const animatedElements = document.querySelectorAll('.reveal-on-scroll');
-    animatedElements.forEach((el) => revealObserver.observe(el));
+    const observeNewElements = () => {
+      const animatedElements = document.querySelectorAll('.reveal-on-scroll:not(.active)');
+      animatedElements.forEach((el) => revealObserver.observe(el));
+    };
+
+    observeNewElements();
+
+    const mutationObserver = new MutationObserver(() => {
+      observeNewElements();
+    });
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       activeObserver.disconnect();
       revealObserver.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 

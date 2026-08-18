@@ -52,7 +52,7 @@ export const Projects: React.FC = () => {
 
         {/* Projects Grid Card Layout */}
         {filteredProjects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-on-scroll delay-200 transition-all duration-500">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
@@ -104,7 +104,7 @@ export const Projects: React.FC = () => {
             ))}
           </div>
         ) : (
-          <div className="py-20 text-center border border-dashed border-emerald-500/20 rounded-3xl reveal-on-scroll delay-200">
+          <div className="py-20 text-center border border-dashed border-emerald-500/20 rounded-3xl animate-fade-in">
             <p className="text-slate-400 text-sm font-mono">
               No projects found in this category.
             </p>
