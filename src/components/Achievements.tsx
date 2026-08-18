@@ -19,19 +19,19 @@ export const Achievements: React.FC = () => {
     {
       title: 'Algo Royale Event Head (Magnovite \'25)',
       category: 'Leadership & Co-curricular',
-      icon: <Sparkles className="w-5 h-5 text-accent-cyan" />,
+      icon: <Sparkles className="w-5 h-5 text-emerald-400" />,
       description: 'Led a 6-member team as Event Head at CHRIST University, Bengaluru, organizing a major inter-college event with over 60+ participants and a prize pool of ₹25K.'
     },
     {
       title: 'Government Registered Copyright',
       category: 'Research & Intellectual Property',
-      icon: <Award className="w-5 h-5 text-accent-violet" />,
+      icon: <Award className="w-5 h-5 text-teal-400" />,
       description: 'Successfully registered an official copyright under my personal name for an original research idea recognized by the Government of India.'
     },
     {
       title: 'SIH 2024 Nominee',
       category: 'Hackathons',
-      icon: <Cpu className="w-5 h-5 text-blue-500" />,
+      icon: <Cpu className="w-5 h-5 text-emerald-400" />,
       description: 'Nominated for the Smart India Hackathon (SIH) 2024 for presenting an innovative financial assistant for UPI apps designed to simplify money management.'
     }
   ];
@@ -40,58 +40,63 @@ export const Achievements: React.FC = () => {
     {
       title: 'AWS Academy Cloud Foundations',
       issuer: 'Amazon Web Services (Jun 2025)',
-      icon: <Award className="w-4 h-4 text-accent-cyan" />
+      icon: <Award className="w-4 h-4 text-emerald-400" />
     },
     {
       title: 'Machine Learning using Python',
       issuer: 'Simplilearn (Nov 2024)',
-      icon: <Award className="w-4 h-4 text-accent-violet" />
+      icon: <Award className="w-4 h-4 text-teal-400" />
     },
     {
       title: 'Introduction to Internet of Things',
       issuer: 'NPTEL - IIT Kharagpur (Nov 2025)',
-      icon: <Award className="w-4 h-4 text-blue-500" />
+      icon: <Award className="w-4 h-4 text-emerald-400" />
     }
   ];
 
   return (
-    <section id="achievements" className="py-24 relative overflow-hidden bg-bg-dark border-b border-border-subtle">
+    <section id="achievements" className="py-20 md:py-24 relative overflow-hidden bg-transparent border-b border-emerald-500/10">
       {/* Background radial highlight */}
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent-cyan/5 rounded-full filter blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-500/5 rounded-full filter blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
         {/* Section Heading */}
-        <div className="flex items-center space-x-4 mb-16 reveal-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white font-sans">
-            Achievements & Certs.
+        <div className="mb-16 reveal-on-scroll">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-heading">
+            Achievements & Certifications.
           </h2>
-          <div className="h-[1px] flex-grow bg-border-subtle" />
         </div>
 
         {/* Dual Grid layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Achievements Timeline (Left) */}
+          {/* Achievements Citations (Left) */}
           <div className="lg:col-span-7 space-y-6 reveal-on-scroll">
-            <h3 className="text-xs font-mono text-text-secondary tracking-widest uppercase mb-4">
+            <h3 className="text-xs font-mono text-slate-400 tracking-widest uppercase mb-6 font-bold flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
               Honors & Activities
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-6 pr-4">
               {achievements.map((ach, idx) => (
                 <div
                   key={idx}
-                  className="flex gap-4 p-5 rounded-2xl border border-border-subtle bg-bg-card/45 hover:bg-bg-card-hover hover:border-white/10 transition-all shadow-md group"
+                  className="flex flex-col md:flex-row items-start gap-4 md:gap-8 pb-6 border-b border-emerald-500/10 last:border-b-0 last:pb-0 group"
                 >
-                  <div className="p-3 h-fit rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors flex-shrink-0">
-                    {ach.icon}
+                  {/* Monospace Citation Index */}
+                  <div className="font-mono text-[10px] text-emerald-400 font-bold bg-[#090c12] border border-emerald-500/30 px-2.5 py-1 rounded-md shrink-0 select-none">
+                    [0{idx + 1}]
                   </div>
+                  
+                  {/* Content detail */}
                   <div className="space-y-1">
-                    <div className="text-[10px] font-mono text-accent-cyan uppercase tracking-wider">
-                      {ach.category}
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-[9px] font-mono text-slate-500 uppercase tracking-wider font-bold">
+                        {ach.category}
+                      </span>
                     </div>
-                    <h4 className="text-base font-bold text-white font-sans tracking-tight">
+                    <h4 className="text-lg font-bold text-white font-heading tracking-tight group-hover:text-emerald-400 transition-colors duration-300">
                       {ach.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-text-secondary leading-relaxed pt-1">
+                    <p className="text-xs md:text-sm text-slate-300 leading-relaxed pt-1 max-w-xl">
                       {ach.description}
                     </p>
                   </div>
@@ -102,23 +107,23 @@ export const Achievements: React.FC = () => {
 
           {/* Certifications (Right) */}
           <div className="lg:col-span-5 space-y-6 reveal-on-scroll delay-200">
-            <h3 className="text-xs font-mono text-text-secondary tracking-widest uppercase mb-4">
+            <h3 className="text-xs font-mono text-slate-400 tracking-widest uppercase mb-4 font-bold">
               Professional Credentials
             </h3>
-            <div className="p-6 rounded-2xl border border-border-subtle bg-bg-card/30 backdrop-blur-sm space-y-4 shadow-xl">
+            <div className="p-6 rounded-3xl border border-emerald-500/20 bg-slate-900/40 backdrop-blur-xl space-y-5 shadow-2xl transition-all duration-300">
               {certifications.map((cert, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3.5 pb-4 border-b border-border-subtle/50 last:border-b-0 last:pb-0 group"
+                  className="flex items-center gap-4 pb-4 border-b border-emerald-500/10 last:border-b-0 last:pb-0 group"
                 >
-                  <div className="p-2 rounded-lg bg-white/5 border border-white/5 group-hover:bg-white/10 transition-colors">
+                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all duration-300">
                     {cert.icon}
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-white leading-snug group-hover:text-accent-cyan transition-colors">
+                    <h4 className="text-sm font-bold text-white leading-snug group-hover:text-emerald-400 transition-colors">
                       {cert.title}
                     </h4>
-                    <div className="text-[10px] font-mono text-text-secondary mt-0.5 uppercase tracking-wider">
+                    <div className="text-[9px] font-mono text-slate-400 mt-0.5 uppercase tracking-wider">
                       {cert.issuer}
                     </div>
                   </div>

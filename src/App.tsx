@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { QuickStats } from './components/QuickStats';
 import { About } from './components/About';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
@@ -9,6 +8,9 @@ import { Skills } from './components/Skills';
 import { Achievements } from './components/Achievements';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { CustomCursor } from './components/CustomCursor';
+import { AICopilot } from './components/AICopilot';
+import { NeuralBackground } from './components/NeuralBackground';
 
 export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -85,19 +87,22 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-bg-dark text-white font-sans min-h-screen relative selection:bg-accent-cyan/35 selection:text-white">
+    <div className="bg-[#08090c] text-slate-100 font-sans min-h-screen relative selection:bg-emerald-500/30 selection:text-white overflow-x-hidden">
+      {/* Custom Trailing Ring Cursor */}
+      <CustomCursor />
+
+      {/* Dynamic Interactive Neural Synapse & Aurora Canvas Background */}
+      <NeuralBackground />
+
       {/* Sticky desktop mouse radial glow highlight */}
       {isDesktop && (
         <div
           className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
           style={{
-            background: `radial-gradient(550px at ${mousePos.x}px ${mousePos.y}px, rgba(0, 240, 255, 0.02), transparent 80%)`,
+            background: `radial-gradient(650px at ${mousePos.x}px ${mousePos.y}px, rgba(16, 185, 129, 0.04) 0%, rgba(20, 184, 166, 0.015) 50%, transparent 80%)`,
           }}
         />
       )}
-
-      {/* Global animated ambient background dust details */}
-      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.007)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none z-0" />
 
       {/* Navigation Headers */}
       <Navbar activeSection={activeSection} />
@@ -105,7 +110,6 @@ export const App: React.FC = () => {
       {/* Page Sections Layout */}
       <main className="relative z-10">
         <Hero />
-        <QuickStats />
         <About />
         <Experience />
         <Projects />
@@ -114,6 +118,9 @@ export const App: React.FC = () => {
         <Contact />
       </main>
 
+      {/* Floating AI Copilot Drawer */}
+      <AICopilot />
+
       {/* Footer bar */}
       <Footer />
     </div>
@@ -121,3 +128,4 @@ export const App: React.FC = () => {
 };
 
 export default App;
+

@@ -24,10 +24,10 @@ interface ProjectModalProps {
 
 // System Pipeline Diagram Component representing data flow pipelines
 const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
-  const nodeClass = "flex-grow flex-shrink-0 p-3 rounded-xl bg-black border border-white/5 text-center flex flex-col justify-center items-center min-w-[120px] max-w-[150px] min-h-[60px] transition-colors hover:border-accent-cyan/20";
+  const nodeClass = "flex-grow flex-shrink-0 p-3.5 rounded-2xl bg-[#16120e]/50 border border-accent-amber/15 text-center flex flex-col justify-center items-center min-w-[120px] max-w-[150px] min-h-[60px] transition-all hover:border-accent-gold/35 hover:bg-white/[0.02]";
   const stepLabelClass = "text-text-secondary text-[8px] font-mono uppercase tracking-wider mb-1 font-bold";
   const nodeTextClass = "text-xs font-semibold text-white leading-tight font-sans";
-  const arrowClass = "text-accent-cyan/40 font-bold text-sm hidden sm:inline-block select-none";
+  const arrowClass = "text-accent-gold/45 font-bold text-sm hidden sm:inline-block select-none";
 
   const renderSteps = () => {
     switch (projectId) {
@@ -51,7 +51,7 @@ const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
             <span className={arrowClass}>→</span>
             <div className={nodeClass}>
               <span className={stepLabelClass}>Stage 4</span>
-              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">Random Forest</span>
+              <span className="text-xs font-bold text-accent-gold leading-tight font-sans">Random Forest</span>
             </div>
           </>
         );
@@ -75,7 +75,7 @@ const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
             <span className={arrowClass}>→</span>
             <div className={nodeClass}>
               <span className={stepLabelClass}>Stage 4</span>
-              <span className="text-xs font-bold text-accent-violet leading-tight font-sans">Guard Shield</span>
+              <span className="text-xs font-bold text-accent-amber leading-tight font-sans">Guard Shield</span>
             </div>
           </>
         );
@@ -99,7 +99,7 @@ const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
             <span className={arrowClass}>→</span>
             <div className={nodeClass}>
               <span className={stepLabelClass}>Stage 4</span>
-              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">Volume Metrics</span>
+              <span className="text-xs font-bold text-accent-gold leading-tight font-sans">Volume Metrics</span>
             </div>
           </>
         );
@@ -123,7 +123,7 @@ const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
             <span className={arrowClass}>→</span>
             <div className={nodeClass}>
               <span className={stepLabelClass}>Stage 4</span>
-              <span className="text-xs font-bold text-emerald-500 leading-tight font-sans">Installments</span>
+              <span className="text-xs font-bold text-accent-gold leading-tight font-sans">Installments</span>
             </div>
           </>
         );
@@ -147,31 +147,7 @@ const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
             <span className={arrowClass}>→</span>
             <div className={nodeClass}>
               <span className={stepLabelClass}>Stage 4</span>
-              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">MySQL DB</span>
-            </div>
-          </>
-        );
-      case 'sentiment-analysis':
-        return (
-          <>
-            <div className={nodeClass}>
-              <span className={stepLabelClass}>Stage 1</span>
-              <span className={nodeTextClass}>User Reviews</span>
-            </div>
-            <span className={arrowClass}>→</span>
-            <div className={nodeClass}>
-              <span className={stepLabelClass}>Stage 2</span>
-              <span className={nodeTextClass}>Text Normalization</span>
-            </div>
-            <span className={arrowClass}>→</span>
-            <div className={nodeClass}>
-              <span className={stepLabelClass}>Stage 3</span>
-              <span className={nodeTextClass}>TF-IDF Vectors</span>
-            </div>
-            <span className={arrowClass}>→</span>
-            <div className={nodeClass}>
-              <span className={stepLabelClass}>Stage 4</span>
-              <span className="text-xs font-bold text-accent-violet leading-tight font-sans">Classifier</span>
+              <span className="text-xs font-bold text-accent-gold leading-tight font-sans">MySQL DB</span>
             </div>
           </>
         );
@@ -195,7 +171,7 @@ const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
             <span className={arrowClass}>→</span>
             <div className={nodeClass}>
               <span className={stepLabelClass}>Stage 4</span>
-              <span className="text-xs font-bold text-accent-cyan leading-tight font-sans">MongoDB Atlas</span>
+              <span className="text-xs font-bold text-accent-gold leading-tight font-sans">MongoDB Atlas</span>
             </div>
           </>
         );
@@ -203,9 +179,9 @@ const PipelineDiagram: React.FC<{ projectId: string }> = ({ projectId }) => {
   };
 
   return (
-    <div className="p-5 rounded-2xl border border-border-subtle bg-bg-card/30 backdrop-blur-sm space-y-4">
-      <h4 className="text-xs font-mono text-accent-cyan tracking-widest uppercase flex items-center gap-1.5">
-        <GitBranch className="w-4 h-4 text-accent-cyan" /> Pipeline Workflow Diagram
+    <div className="p-5 rounded-3xl border border-accent-amber/15 bg-white/[0.005] backdrop-blur-sm space-y-4">
+      <h4 className="text-xs font-mono text-accent-gold tracking-widest uppercase flex items-center gap-1.5 font-bold">
+        <GitBranch className="w-4 h-4 text-accent-gold" /> Pipeline Workflow Diagram
       </h4>
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-1 overflow-x-auto">
         {renderSteps()}
@@ -243,29 +219,29 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   return (
     <div
       onClick={handleOverlayClick}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300 animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-lg transition-opacity duration-300 animate-fade-in"
     >
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-gradient-to-b from-[#111111] to-[#0a0a0a] border border-border-subtle rounded-2xl shadow-2xl p-6 md:p-8 animate-fade-up">
+      <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-gradient-to-b from-[#161310] to-[#080706] border border-accent-amber/25 rounded-3xl shadow-2xl p-6 md:p-8 animate-fade-up">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-lg bg-white/5 border border-white/5 text-text-secondary hover:text-white hover:bg-white/10 hover:border-white/10 transition-all cursor-pointer"
+          className="absolute top-4 right-4 p-2 rounded-xl bg-white/5 border border-white/5 text-text-secondary hover:text-white hover:bg-white/10 hover:border-white/10 transition-all cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Header Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-6 border-b border-border-subtle">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-6 border-b border-accent-amber/15">
           <div className="md:col-span-8 space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-xs font-mono font-semibold text-accent-cyan">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-accent-gold/10 border border-accent-gold/20 text-[9px] font-mono font-bold text-accent-gold uppercase tracking-wider">
               {project.category}
             </span>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-white font-sans tracking-tight">
+            <h3 className="text-2xl md:text-3xl font-black text-white font-sans tracking-tight">
               {project.title}
             </h3>
-            <p className="text-sm text-text-secondary leading-relaxed max-w-2xl">
+            <p className="text-xs md:text-sm text-text-secondary leading-relaxed max-w-2xl">
               {project.description}
             </p>
           </div>
@@ -274,7 +250,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 bg-white/5 hover:bg-white/10 text-white border border-border-subtle hover:border-white/20 text-xs font-bold tracking-wide rounded-lg flex items-center gap-2 transition-all w-full md:w-36 justify-center cursor-pointer"
+              className="px-4 py-3 bg-white/[0.01] hover:bg-white/[0.04] hover:border-accent-gold/20 border border-accent-amber/15 text-white text-xs font-bold tracking-widest uppercase rounded-xl flex items-center gap-2 transition-all w-full md:w-40 justify-center cursor-pointer shadow-md"
             >
               <GithubIcon className="w-4 h-4" /> Code Source
             </a>
@@ -283,7 +259,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2.5 bg-gradient-to-r from-accent-cyan to-blue-600 text-black text-xs font-bold tracking-wide rounded-lg flex items-center gap-2 hover:opacity-90 transition-all w-full md:w-36 justify-center cursor-pointer shadow-lg shadow-cyan-500/10"
+                className="px-4 py-3 bg-gradient-to-r from-accent-bronze via-accent-amber to-accent-gold text-white text-xs font-bold tracking-widest uppercase rounded-xl flex items-center gap-2 hover:opacity-95 transition-all w-full md:w-40 justify-center cursor-pointer shadow-[0_0_20px_rgba(217,119,6,0.15)]"
               >
                 <ExternalLink className="w-4 h-4" /> Live Demo
               </a>
@@ -296,19 +272,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Main Narrative (Left) */}
           <div className="lg:col-span-8 space-y-6">
             <div>
-              <h4 className="text-sm font-mono text-accent-cyan tracking-wider uppercase mb-2 flex items-center gap-1.5">
+              <h4 className="text-xs font-mono text-accent-gold tracking-wider uppercase mb-2 flex items-center gap-1.5 font-bold">
                 <ShieldCheck className="w-4 h-4" /> Background & Problem
               </h4>
-              <p className="text-sm text-text-secondary leading-relaxed">
+              <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
                 {project.problem}
               </p>
             </div>
 
             <div>
-              <h4 className="text-sm font-mono text-accent-cyan tracking-wider uppercase mb-2 flex items-center gap-1.5">
+              <h4 className="text-xs font-mono text-accent-gold tracking-wider uppercase mb-2 flex items-center gap-1.5 font-bold">
                 <Database className="w-4 h-4" /> Solution Design
               </h4>
-              <p className="text-sm text-text-secondary leading-relaxed">
+              <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
                 {project.solution}
               </p>
             </div>
@@ -317,13 +293,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <PipelineDiagram projectId={project.id} />
 
             <div>
-              <h4 className="text-sm font-mono text-accent-cyan tracking-wider uppercase mb-2">
+              <h4 className="text-xs font-mono text-accent-gold tracking-wider uppercase mb-3 font-bold">
                 Key Features
               </h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-text-secondary list-none">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs md:text-sm text-text-secondary list-none">
                 {project.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="text-accent-cyan select-none mt-1 font-mono text-[10px]">▶</span>
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <span className="text-accent-gold select-none mt-1 font-mono text-[9px]">▶</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -335,17 +311,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div className="lg:col-span-4 space-y-6">
             {/* Success Metrics Block */}
             {project.results && project.results.length > 0 && (
-              <div className="p-4 rounded-xl border border-border-subtle bg-white/2 space-y-4">
-                <h4 className="text-xs font-mono text-text-secondary tracking-widest uppercase mb-1 flex items-center gap-1.5">
-                  <Award className="w-4 h-4 text-accent-violet" /> Metrics & Results
+              <div className="p-5 rounded-2xl border border-accent-amber/15 bg-gradient-to-br from-white/[0.01] to-transparent space-y-4">
+                <h4 className="text-xs font-mono text-text-secondary tracking-widest uppercase mb-1 flex items-center gap-1.5 font-bold">
+                  <Award className="w-4 h-4 text-accent-gold" /> Metrics & Results
                 </h4>
                 <div className="grid grid-cols-2 gap-4">
                   {project.results.map((res, idx) => (
                     <div key={idx} className="text-left">
-                      <div className="text-2xl font-extrabold text-white font-sans tracking-tight">
+                      <div className="text-2xl font-black text-white font-sans tracking-tight">
                         {res.value}
                       </div>
-                      <div className="text-[10px] text-text-secondary leading-tight mt-0.5">
+                      <div className="text-[10px] text-text-secondary leading-tight mt-0.5 font-semibold">
                         {res.label}
                       </div>
                     </div>
@@ -356,14 +332,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
             {/* Technologies Block */}
             <div className="space-y-3">
-              <h4 className="text-xs font-mono text-text-secondary tracking-widest uppercase">
+              <h4 className="text-xs font-mono text-text-secondary tracking-widest uppercase font-bold">
                 Core Stack
               </h4>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 text-xs font-mono bg-white/5 border border-white/5 text-white/90 rounded-md"
+                    className="px-2.5 py-1 text-xs font-mono bg-white/[0.02] border border-white/5 text-white/90 rounded-lg"
                   >
                     {tech}
                   </span>

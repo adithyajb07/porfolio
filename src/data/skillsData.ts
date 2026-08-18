@@ -1,64 +1,217 @@
 export interface SkillItem {
   name: string;
-  level: string;
+  level: 'Advanced' | 'Intermediate' | 'Proficient';
+  proficiency: number; // 0 - 100 percentage
   description: string;
+  category: string;
+  usedInProjects?: string[];
+  tags?: string[];
 }
 
 export interface SkillCategory {
+  id: string;
   title: string;
+  icon: string;
   skills: SkillItem[];
 }
 
 export const skillsData: SkillCategory[] = [
   {
-    title: 'Languages',
+    id: 'ai-ml',
+    title: 'AI / ML & Computer Vision',
+    icon: 'Brain',
     skills: [
-      { name: 'Python', level: 'Advanced', description: 'Core language for ML, AI models, backend web frameworks, and computer vision pipelines.' },
-      { name: 'Java', level: 'Intermediate', description: 'Used for object-oriented software engineering, desktop architectures, and enterprise systems.' },
-      { name: 'C', level: 'Intermediate', description: 'Foundation for understanding low-level algorithms, pointer management, and computation efficiency.' },
-      { name: 'JavaScript', level: 'Advanced', description: 'Primary scripting language for UI development, interactive states, and frontend components.' },
-      { name: 'SQL', level: 'Advanced', description: 'Writing optimized queries, relational schemas, database indexings, and transaction flows.' },
-      { name: 'HTML', level: 'Advanced', description: 'Constructing accessible, clean, and semantically sound structures for modern web layouts.' },
-      { name: 'CSS', level: 'Advanced', description: 'Styling premium, responsive layouts with custom flex/grid systems and hardware-accelerated animations.' }
+      {
+        name: 'Machine Learning',
+        level: 'Advanced',
+        proficiency: 95,
+        category: 'AI / ML',
+        description: 'Supervised/unsupervised pipelines, regression, random forests, classification, and cross-validation metrics.',
+        usedInProjects: ['Image Authenticity Detection System', 'SIH Financial Aid Assistant', 'Student Exam Predictor'],
+        tags: ['Scikit-learn', 'Algorithms', 'Feature Engineering']
+      },
+      {
+        name: 'Computer Vision',
+        level: 'Advanced',
+        proficiency: 92,
+        category: 'AI / ML',
+        description: 'Image processing, frequency domain FFT analysis, Local Binary Patterns (LBP), and Error Level Analysis (ELA).',
+        usedInProjects: ['Image Authenticity Detection System'],
+        tags: ['OpenCV', 'ELA', 'LBP', 'FFT']
+      },
+      {
+        name: 'NLP',
+        level: 'Advanced',
+        proficiency: 90,
+        category: 'AI / ML',
+        description: 'Text tokenization, TF-IDF vectorization, adversarial prompt detection, and transformer embeddings.',
+        usedInProjects: ['Adversarial Prompt Detection', 'SIH Financial Aid Assistant'],
+        tags: ['NLTK', 'Transformers', 'DistilBERT']
+      },
+      {
+        name: 'PyTorch',
+        level: 'Intermediate',
+        proficiency: 82,
+        category: 'AI / ML',
+        description: 'Constructing computational graphs, tensor matrices, backpropagation, and transformer inference engines.',
+        usedInProjects: ['Adversarial Prompt Detection'],
+        tags: ['Deep Learning', 'Tensors', 'GPU Acceleration']
+      },
+      {
+        name: 'TensorFlow / Keras',
+        level: 'Intermediate',
+        proficiency: 80,
+        category: 'AI / ML',
+        description: 'Deep neural network layer prototyping, training epochs, weight serialization, and validation callbacks.',
+        usedInProjects: ['Image Forensics Pipeline'],
+        tags: ['Neural Networks', 'CNN', 'Deep Learning']
+      },
+      {
+        name: 'OpenCV & YOLO',
+        level: 'Advanced',
+        proficiency: 88,
+        category: 'AI / ML',
+        description: 'Digital image transformation, matrix filters, edge/contour detection, and real-time bounding box regression.',
+        usedInProjects: ['Image Authenticity Detection System'],
+        tags: ['Object Detection', 'Contours', 'Real-time Vision']
+      },
+      {
+        name: 'Transformers',
+        level: 'Intermediate',
+        proficiency: 85,
+        category: 'AI / ML',
+        description: 'Fine-tuning Pre-trained models (DistilBERT, LLM safety filters) for structured text security and classification.',
+        usedInProjects: ['Adversarial Prompt Detection'],
+        tags: ['LLMs', 'DistilBERT', 'Hugging Face']
+      }
     ]
   },
   {
-    title: 'AI / ML',
+    id: 'languages',
+    title: 'Programming Languages',
+    icon: 'Code2',
     skills: [
-      { name: 'Machine Learning', level: 'Advanced', description: 'Supervised/unsupervised models, regression/classification, feature extraction, and cross-validation.' },
-      { name: 'Deep Learning', level: 'Intermediate', description: 'Neural networks, activation layers, backpropagation, and multi-layer perceptron training.' },
-      { name: 'NLP', level: 'Advanced', description: 'Text pre-processing, tokenization, TF-IDF vectorization, sentiment classification, and fine-tuning transformers.' },
-      { name: 'Computer Vision', level: 'Advanced', description: 'Image processing, matrix calculations, edge/contour detection, and object localization pipelines.' },
-      { name: 'Transformers', level: 'Intermediate', description: 'Fine-tuning Pre-trained models (like DistilBERT) for custom text processing and safety filters.' }
+      {
+        name: 'Python',
+        level: 'Advanced',
+        proficiency: 96,
+        category: 'Languages',
+        description: 'Core language for ML research, OpenCV forensics, deep learning pipelines, FastAPI/Django backends, and data science.',
+        usedInProjects: ['Image Authenticity Detection System', 'Adversarial Prompt Detection', 'Genrobotics ERP Backend', 'SIH Assistant'],
+        tags: ['OOP', 'NumPy', 'Pandas', 'Django']
+      },
+      {
+        name: 'Java',
+        level: 'Intermediate',
+        proficiency: 84,
+        category: 'Languages',
+        description: 'Object-oriented software development, concurrent multithreading, desktop Swing/JFrame applications, and driver bindings.',
+        usedInProjects: ['BookCinema Ticket Portal'],
+        tags: ['Multithreading', 'OOP', 'Swing UI']
+      },
+      {
+        name: 'JavaScript / TypeScript',
+        level: 'Advanced',
+        proficiency: 88,
+        category: 'Languages',
+        description: 'Modern ES6+, asynchronous state management, dynamic DOM rendering, and TypeScript type safety systems.',
+        usedInProjects: ['Portfolio Single Page Application', 'Web Portals'],
+        tags: ['React', 'Async/Await', 'Type Safety']
+      },
+      {
+        name: 'SQL',
+        level: 'Advanced',
+        proficiency: 90,
+        category: 'Languages',
+        description: 'Writing optimized multi-table JOINs, subqueries, relational schemas, indexing strategies, and ACID transactions.',
+        usedInProjects: ['Genrobotics ERP System', 'Student Performance DB'],
+        tags: ['PostgreSQL', 'SQLite', 'Query Optimization']
+      },
+      {
+        name: 'C',
+        level: 'Intermediate',
+        proficiency: 78,
+        category: 'Languages',
+        description: 'Foundation for low-level memory allocation, pointers, data structures, and computational complexity analysis.',
+        tags: ['Pointers', 'Memory Management', 'Algorithms']
+      }
     ]
   },
   {
-    title: 'Frameworks',
+    id: 'frameworks',
+    title: 'Frameworks & Web Architecture',
+    icon: 'Layers',
     skills: [
-      { name: 'Django', level: 'Advanced', description: 'Used for backend API design, ORM database integrations, authentication routes, and server architectures.' },
-      { name: 'Angular', level: 'Intermediate', description: 'Client-side SPA framework, modular component building, data-binding, and API integration.' },
-      { name: 'Streamlit', level: 'Advanced', description: 'Creating interactive user interfaces for machine learning models and visual dashboards.' },
-      { name: 'PyTorch', level: 'Intermediate', description: 'Building neural network computational graphs, tensor matrices, and conducting transformer inferences.' },
-      { name: 'TensorFlow', level: 'Intermediate', description: 'Training deep models, saving graph weights, and utilizing model optimization techniques.' },
-      { name: 'Keras', level: 'Intermediate', description: 'High-level neural network API to rapidly prototype, compile, and validate deep layers.' }
+      {
+        name: 'Django',
+        level: 'Advanced',
+        proficiency: 88,
+        category: 'Frameworks',
+        description: 'Backend REST API architecture, ORM querysets, secure session authentication, and scalable enterprise ERP modules.',
+        usedInProjects: ['Genrobotics ERP System', 'Soften Tech Database Applications'],
+        tags: ['REST API', 'ORM', 'Auth & Security']
+      },
+      {
+        name: 'Streamlit',
+        level: 'Advanced',
+        proficiency: 94,
+        category: 'Frameworks',
+        description: 'Rapid deployment of interactive AI/ML dashboards, live feature visualizers, and inference test harnesses.',
+        usedInProjects: ['Image Authenticity Detection System', 'Adversarial Prompt Detection', 'SIH Assistant'],
+        tags: ['Data Visualization', 'ML UI', 'Dashboard']
+      },
+      {
+        name: 'Angular / React',
+        level: 'Intermediate',
+        proficiency: 82,
+        category: 'Frameworks',
+        description: 'Modular SPA client-side development, component life cycles, reactive UI bindings, and Tailwind CSS design systems.',
+        usedInProjects: ['Portfolio Application', 'Interactive Web Portals'],
+        tags: ['Single Page Apps', 'Components', 'Reactive UI']
+      }
     ]
   },
   {
-    title: 'Data & Databases',
+    id: 'databases-tools',
+    title: 'Databases, Cloud & DevOps',
+    icon: 'Database',
     skills: [
-      { name: 'PostgreSQL', level: 'Advanced', description: 'Enterprise-grade relational database, query optimizations, JSONB datatypes, and foreign constraints.' },
-      { name: 'SQLite', level: 'Advanced', description: 'Lightweight database layer for rapid development, testing, and portable applications.' },
-      { name: 'MongoDB', level: 'Intermediate', description: 'Document-oriented NoSQL database, flexible schemas, collections management, and indexes.' }
-    ]
-  },
-  {
-    title: 'Tools',
-    skills: [
-      { name: 'Docker', level: 'Intermediate', description: 'Containerizing services, drafting Dockerfiles, and orchestrating multi-container environments.' },
-      { name: 'Git', level: 'Advanced', description: 'Distributed version control, branch management, conflict merges, and collaboration workflows.' },
-      { name: 'GitHub', level: 'Advanced', description: 'Hosting repository files, pull requests, actions CI/CD, and deploying custom static pages.' },
-      { name: 'OpenCV', level: 'Advanced', description: 'Image filtering, pixel transformations, digital analysis, and custom contour operations.' },
-      { name: 'YOLO', level: 'Advanced', description: 'Rapid, real-time object detection models for bounding box regressions and class estimations.' }
+      {
+        name: 'PostgreSQL',
+        level: 'Advanced',
+        proficiency: 89,
+        category: 'Databases & Tools',
+        description: 'Enterprise relational database, complex migrations, foreign keys, JSONB queries, and high-throughput connections.',
+        usedInProjects: ['Genrobotics ERP System'],
+        tags: ['Relational DB', 'ACID', 'JSONB']
+      },
+      {
+        name: 'MongoDB (NoSQL)',
+        level: 'Intermediate',
+        proficiency: 85,
+        category: 'Databases & Tools',
+        description: 'Document-oriented NoSQL storage, flexible collection schemas, Atlas cluster deployments, and index synchronization.',
+        usedInProjects: ['BookCinema Ticket Portal'],
+        tags: ['MongoDB Atlas', 'NoSQL', 'Document Store']
+      },
+      {
+        name: 'Docker',
+        level: 'Intermediate',
+        proficiency: 80,
+        category: 'Databases & Tools',
+        description: 'Containerizing applications, multi-stage Dockerfiles, volume bindings, and reproducible environments.',
+        usedInProjects: ['Containerized ML Deployments'],
+        tags: ['Containers', 'Microservices', 'DevOps']
+      },
+      {
+        name: 'Git & GitHub',
+        level: 'Advanced',
+        proficiency: 94,
+        category: 'Databases & Tools',
+        description: 'Distributed version control, branching strategies, collaborative PR reviews, and automated CI/CD static deployments.',
+        usedInProjects: ['All Projects & Open Source Repositories'],
+        tags: ['Version Control', 'CI/CD', 'Open Source']
+      }
     ]
   }
 ];

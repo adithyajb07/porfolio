@@ -1,75 +1,59 @@
 import React from 'react';
-import { Download } from 'lucide-react';
-import { HeroVisual } from './HeroVisual';
+import { Download, Sparkles } from 'lucide-react';
+import { KineticText } from './KineticText';
 import resumePdf from '../assets/resume/2362010_AdithyaJishaBiju.pdf';
 
 export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[96vh] flex items-center pt-24 overflow-hidden bg-grid-pattern"
+      className="relative pt-32 pb-20 md:pt-36 md:pb-24 overflow-hidden bg-transparent border-b border-emerald-500/10"
     >
-      {/* Background Radial Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/40 to-[#050505] pointer-events-none z-10" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-cyan/5 rounded-full filter blur-[100px] pointer-events-none animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-violet/5 rounded-full filter blur-[100px] pointer-events-none animate-pulse delay-500" />
-
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20 w-full">
-        {/* Left Text Column */}
-        <div className="lg:col-span-7 flex flex-col space-y-6 md:space-y-8 text-left animate-fade-up">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center space-x-2">
-            <span className="h-[1px] w-8 bg-accent-cyan" />
-            <span className="text-xs md:text-sm font-mono tracking-widest text-accent-cyan font-semibold uppercase">
-              Computer Science Engineer • AI/ML • Software Development
-            </span>
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-20 w-full">
+        {/* Main Text Container */}
+        <div className="flex flex-col space-y-8 md:space-y-10 text-left animate-fade-up">
+          
+          {/* Discipline Role Tag */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/25 text-xs md:text-sm font-mono tracking-widest text-emerald-400 font-bold uppercase w-fit shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+            <Sparkles className="w-4 h-4 text-emerald-400" />
+            Computer Science & AI/ML Engineer
           </div>
 
-          {/* Heading - Name noticed first */}
+          {/* Name Heading */}
           <div className="space-y-2">
-            <span className="text-sm md:text-base font-mono tracking-widest text-text-secondary uppercase">
-              Hi, I am
-            </span>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-[1.05] font-sans">
-              <span className="text-gradient">Adithya</span> <br />
-              Jisha Biju
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] font-heading tracking-tight">
+              <span className="text-white">Adithya </span>
+              <span className="text-gradient font-heading">
+                Jisha Biju
+              </span>
             </h1>
           </div>
 
-          {/* Tagline / Subheading */}
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-text-secondary leading-snug">
-            Building <span className="text-white">intelligent software</span> that solves <br className="hidden md:inline" />
-            real-world problems.
+          {/* Kinetic Tagline / Subheading */}
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-slate-200 leading-snug max-w-4xl pt-2 font-heading">
+            Building <KineticText /> that solve real-world problems.
           </h2>
 
           {/* Supporting Paragraph */}
-          <p className="text-base md:text-lg text-text-secondary max-w-xl leading-relaxed">
-            I'm a Computer Science Engineering student specializing in AI/ML. I build practical software solutions across machine learning, computer vision, NLP, backend systems, and modern web technologies.
+          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-light pt-1">
+            Computer Science Engineering student specializing in AI/ML at CHRIST University. I design and build production-grade deep learning models, computer vision pipelines, NLP applications, and scalable full-stack web architectures.
           </p>
 
           {/* Buttons Row */}
-          <div className="flex flex-wrap gap-4 items-center pt-2">
+          <div className="flex flex-wrap gap-4 items-center pt-6">
             <a
               href={resumePdf}
               download="Adithya_Resume.pdf"
-              className="px-6 py-3.5 bg-gradient-to-r from-accent-cyan via-blue-600 to-accent-violet text-black font-bold text-sm tracking-wide rounded-lg flex items-center gap-2 hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] cursor-pointer group"
+              className="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm tracking-widest uppercase rounded-xl flex items-center gap-2.5 transition-all duration-300 shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:shadow-[0_0_45px_rgba(16,185,129,0.5)] cursor-pointer group"
             >
               Download Resume
               <Download className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
         </div>
-
-        {/* Right Canvas Column */}
-        <div className="lg:col-span-5 h-[400px] lg:h-[500px] w-full relative flex items-center justify-center rounded-2xl border border-[rgba(255,255,255,0.03)] bg-gradient-to-br from-[rgba(255,255,255,0.01)] to-transparent backdrop-blur-3xl overflow-hidden shadow-2xl">
-          {/* Overlay grid inside visual */}
-          <div className="absolute inset-0 bg-[radial-gradient(rgba(0,240,255,0.03)_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
-          <HeroVisual />
-          
-          {/* Faint Center Glow */}
-          <div className="absolute w-48 h-48 rounded-full bg-accent-cyan/5 filter blur-3xl pointer-events-none" />
-        </div>
       </div>
     </section>
   );
 };
+
+

@@ -35,7 +35,7 @@ export const projectsData: Project[] = [
       'Streamlit web dashboard for real-time file upload and visual inspection'
     ],
     technologies: ['Python', 'Random Forest', 'ELA', 'OpenCV', 'Pillow', 'Scikit-learn', 'Streamlit'],
-    github: 'https://github.com/adithyajb07',
+    github: 'https://github.com/adithyajb07/Image-Authenticity-Detection-System',
     image: 'pic1.jpg',
     results: [
       { label: 'Detection Accuracy', value: '92.4%' },
@@ -83,7 +83,7 @@ export const projectsData: Project[] = [
       'Streamlit dashboard displaying visual step-by-step pipeline outputs'
     ],
     technologies: ['Python', 'OpenCV', 'YOLO', 'Streamlit', 'NumPy', 'Matplotlib'],
-    github: 'https://github.com/adithyajb07',
+    github: 'https://github.com/adithyajb07/Smart-Bottle-Vision-System',
     image: 'pic3.jpg',
     results: [
       { label: 'Detection Accuracy', value: '97.1%' },
@@ -131,33 +131,11 @@ export const projectsData: Project[] = [
       'Fully responsive UI styled with modern CSS variables'
     ],
     technologies: ['Django', 'Python', 'MySQL', 'Razor-Pay', 'HTML5', 'CSS3', 'JavaScript', 'Git'],
-    github: 'https://github.com/adithyajb07',
+    github: 'https://github.com/adithyajb07/CleanFeshly-Web-Services',
     image: 'pic5.jpg',
     results: [
       { label: 'Transaction Reliability', value: '99.9%' },
       { label: 'Page Load Speed', value: '1.2s' }
-    ]
-  },
-  {
-    id: 'sentiment-analysis',
-    title: 'Product Review Sentiment Classifier',
-    category: 'AI / ML',
-    description: 'An NLP-based classification model that processes customer reviews, normalizes text inputs, and evaluates sentiment polarity using machine learning classifiers.',
-    longDescription: 'This machine learning project focuses on analyzing customer reviews to classify them as positive, negative, or neutral. Text inputs are pre-processed using tokenization, stop-word removal, and lemmatization (NLTK/SpaCy), then vectorised via TF-IDF before classification. The model comparison includes Logistic Regression, Support Vector Machines, and Naive Bayes architectures to identify the highest performing model for deployment.',
-    problem: 'Brands receive thousands of reviews across sites daily. Manual sentiment sorting is impossible, hindering fast customer feedback analysis.',
-    solution: 'Created an NLP pipeline in Python that processes text, normalizes character datasets, performs feature extraction, and trains classification classifiers to output structured sentiment dashboards.',
-    features: [
-      'Text pre-processing (lemmatization, tokenization, regular expressions)',
-      'TF-IDF text vectorization matrix',
-      'Comparative analysis of classification models',
-      'Sentiment dashboard with positive/negative keyword density maps'
-    ],
-    technologies: ['Python', 'NLTK', 'Scikit-learn', 'TF-IDF', 'Pandas', 'NumPy', 'Matplotlib'],
-    github: 'https://github.com/adithyajb07',
-    image: 'pic6.jpg',
-    results: [
-      { label: 'Model Accuracy', value: '89.7%' },
-      { label: 'Inference Velocity', value: '12ms / sentence' }
     ]
   },
   {
