@@ -59,10 +59,10 @@ export const Achievements: React.FC = () => {
       {/* Background radial highlight */}
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-500/5 rounded-full filter blur-[130px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-20">
         {/* Section Heading */}
-        <div className="mb-16 reveal-on-scroll">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-heading">
+        <div className="mb-12 reveal-on-scroll">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white font-heading">
             Achievements & Certifications.
           </h2>
         </div>

@@ -18,7 +18,7 @@ export const Experience: React.FC = () => {
             <span className="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase flex items-center gap-1.5 mb-1">
               <Sparkles className="w-3.5 h-3.5" /> Proven Track Record
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-heading">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white font-heading">
               Career & Education.
             </h2>
           </div>

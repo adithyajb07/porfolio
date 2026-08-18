@@ -11,17 +11,17 @@ export const Hero: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-20 w-full">
         {/* Main Text Container */}
-        <div className="flex flex-col space-y-8 md:space-y-10 text-left animate-fade-up">
+        <div className="flex flex-col space-y-6 md:space-y-8 text-left animate-fade-up">
           
           {/* Discipline Role Tag */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/25 text-xs md:text-sm font-mono tracking-widest text-emerald-400 font-bold uppercase w-fit shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-            <Sparkles className="w-4 h-4 text-emerald-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/25 text-xs font-mono tracking-widest text-emerald-400 font-bold uppercase w-fit shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
             Computer Science & AI/ML Engineer
           </div>
 
           {/* Name Heading */}
           <div className="space-y-2">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] font-heading tracking-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.08] font-heading tracking-tight">
               <span className="text-white">Adithya </span>
               <span className="text-gradient font-heading">
                 Jisha Biju
@@ -30,12 +30,12 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Kinetic Tagline / Subheading */}
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-slate-200 leading-snug max-w-4xl pt-2 font-heading">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-slate-200 leading-snug max-w-3xl pt-1 font-heading">
             Building <KineticText /> that solve real-world problems.
           </h2>
 
           {/* Supporting Paragraph */}
-          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-light pt-1">
+          <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed font-light">
             Computer Science Engineering student specializing in AI/ML at CHRIST University. I design and build production-grade deep learning models, computer vision pipelines, NLP applications, and scalable full-stack web architectures.
           </p>
 

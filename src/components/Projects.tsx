@@ -20,11 +20,11 @@ export const Projects: React.FC = () => {
       {/* Background Radial Glow */}
       <div className="absolute top-1/3 right-1/4 w-[35rem] h-[35rem] bg-emerald-500/5 rounded-full filter blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-20">
         {/* Section Headers */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-heading">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white font-heading">
               Things I've built.
             </h2>
             <p className="text-sm md:text-base text-slate-300 max-w-4xl leading-relaxed">

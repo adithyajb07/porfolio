@@ -74,10 +74,10 @@ export const Contact: React.FC = () => {
       {/* Background Radial Glow */}
       <div className="absolute bottom-1/4 left-1/4 w-[30rem] h-[30rem] bg-emerald-500/5 rounded-full filter blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-20">
         {/* Section Heading */}
-        <div className="mb-16 reveal-on-scroll">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-heading">
+        <div className="mb-12 reveal-on-scroll">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white font-heading">
             Let's build something.
           </h2>
         </div>

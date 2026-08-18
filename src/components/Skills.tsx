@@ -61,7 +61,7 @@ export const Skills: React.FC = () => {
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full filter blur-[150px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full filter blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-20">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
@@ -69,7 +69,7 @@ export const Skills: React.FC = () => {
             <span className="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase flex items-center gap-1.5">
               <Cpu className="w-3.5 h-3.5" /> Capabilities Matrix
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-heading">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white font-heading">
               Technical Stack.
             </h2>
           </div>
